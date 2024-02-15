@@ -1,3 +1,49 @@
-body{
-    background-color: black;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #bb9c9c;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 0;
+}
+
+.itens-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-nav h1 {
+    margin: 0;
+}
+
+.itens_menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.itens_menu a:hover {
+    background-color: #555;
+}
+
+.about-me {
+    background-color: #c3dad6; /* Cor de fundo desejada */
+    padding: 20px;
+    color: #333; /* Cor do texto na seção */
+}
+.splash {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
