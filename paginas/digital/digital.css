@@ -3,9 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inria Sans', sans-serif;
-
 }
-
 
 body {
     margin: 0;
@@ -26,12 +24,10 @@ header {
     /* background-image: linear-gradient(to top, #ffffff, #fafafc, #f4f4f8, #efeff5, #e9eaf2, #e2e8f4, #dae8f5, #d0e7f4, #c2eaf2, #b8ecea, #b7eddb, #c0ecc7); */
 }
 
-.itens-nav {
+.itens-nav  {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
-
 }
 
 .logo-nav img {
@@ -53,8 +49,6 @@ header {
 .itens_menu a:hover {
     background-color: #bb35d2;
 }
-
-
 
  .text-container h1{
     align-items: center; 
