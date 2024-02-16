@@ -1,76 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
-        .about-me {
-            background-color: #a3d2ca; /* Cor de fundo desejada */
-            padding: 20px;
-            color: #333; /* Cor do texto na seção */
-        }
+        <title>Galeria com CSS Grid</title>
 
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
+        <style>
 
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
+body {
+  font-family: "Nunito", sans-serif;
+  color: #333;
+  font-weight: 300;
+  line-height: 1.6; 
+}
 
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-    </style>
-    <title>Meu Portfólio</title>
-</head>
-<body>
+.container {
+  width: 60%;
+  margin: 2rem auto; 
+}
 
-<header>
-    <h1>Seu Nome</h1>
-    <p>Desenvolvedor Web</p>
-</header>
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 5vw);
+  grid-gap: 1.5rem; 
+}
 
-<section class="about-me">
-    <h2>Quem Sou Eu</h2>
-    <p>Coloque aqui informações sobre você, suas habilidades, experiências, etc.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vel corrupti maiores, error saepe facere hic fuga ipsam voluptates tempore ea deserunt sunt expedita iure eaque? Culpa eligendi quam dicta.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatum unde exercitationem, molestias quae dolorum tempora suscipit magnam ipsum placeat totam consectetur, numquam sed aperiam dolor impedit voluptatibus, laborum quibusdam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, iste debitis. Architecto officia mollitia magni? Perferendis ipsam corporis a voluptatem, laboriosam incidunt totam. Facilis iure, atque deserunt aliquam ipsa nobis.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta mollitia magnam, dolorum quisquam suscipit laudantium quo laboriosam veniam dicta nulla vitae vel aut exercitationem assumenda veritatis perferendis, enim, consequuntur porro.
-    </p>
-</section>
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; 
+}
 
-<section class="gallery">
-    <h2>Galeria de Fotos</h2>
-    <img src="imagem1.jpg" alt="Imagem 1">
-    <img src="imagem2.jpg" alt="Imagem 2">
-    <img src="imagem3.jpg" alt="Imagem 3">
-    <!-- Adicione mais imagens conforme necessário -->
-</section>
+.gallery__item--1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
 
-</body>
+  /** Sintaxe alternativa **/
+  /* grid-column: 1 / span 2;  */
+  /* grid-row: 1 / span 2; */
+}
+
+.gallery__item--2 {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  /** Sintaxe alternativa **/
+  /* grid-column: 3 / span 2;  */
+  /* grid-row: 1 / span 2; */
+}
+
+.gallery__item--3 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 1;
+  grid-row-end: 6;
+
+  /** Sintaxe alternativa **/
+  /* grid-column: 5 / span 4;
+  grid-row: 1 / span 5; */
+}
+
+.gallery__item--4 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 6;
+
+  /** Sintaxe alternativa **/
+  /* grid-column: 1 / span 4;  */
+  /* grid-row: 3 / span 3; */
+}
+
+.gallery__item--5 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 9;
+
+  /** Sintaxe alternativa **/
+  /* grid-column: 1 / span 4; */
+  /* grid-row: 6 / span 3; */
+}
+
+.gallery__item--6 {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 6;
+  grid-row-end: 9;
+
+  /** Sintaxe alternativa **/
+  /* grid-column: 5 / span 4; */
+  /* grid-row: 6 / span 3; */
+}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="gallery">
+                <figure class="gallery__item gallery__item--1">
+                    <img src="../portfolio/assets/analog/1.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--2">
+                    <img src="../portfolio/assets/analog/2.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--3">
+                    <img src="../portfolio/assets/analog/3.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--4">
+                    <img src="../portfolio/assets/analog/4.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--5">
+                    <img src="../portfolio/assets/analog/5.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+                <figure class="gallery__item gallery__item--6">
+                    <img src="../portfolio/assets/analog/6.jpg" alt="Gallery image 1" class="gallery__img">
+                </figure>
+            </div>
+        </div>
+    </body>
 </html>
